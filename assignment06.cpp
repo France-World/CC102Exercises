@@ -11,8 +11,11 @@ bool isPrime(int n) {
 }
 
 int countPrimesFromFile() {
-    ifstream file("NUMS.TXT");
-    if (!file) {
+    fstream file;
+
+    file.open("NUMS.TXT", ios::in | ios::out | ios::app);
+
+    if (!file.is_open()) {
         cout << "Error: Cannot open NUMS.TXT" << endl;
         return -1;
     }
